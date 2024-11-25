@@ -1,0 +1,390 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+    --color-element: #82C262;
+    --color-background: #F7F7F5;
+    --color-icon--list: #6BB85F;
+    --heigth-element: calc(100% / 3);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #EDEAEA;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #9c9a9a;
+    border-radius: 3px;
+}
+
+.wrapper {
+    background: var(--color-background);
+    min-height: 100vh;
+}
+
+.nav__bar {
+    position: fixed;
+    width: 310px;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-310px);
+    transition: transform .3s;
+    background: var(--color-element);
+    z-index: 1;
+}
+
+.nav__menu--show {
+    transform: translateX(-265px);
+}
+
+.menu__bar {
+    padding-left: 0;
+}
+
+.menu__bar--show {
+    transform: translateX(265px);
+}
+
+.menu__bar--show .menu__bar__li {
+    transform: translateX(-300px);
+}
+
+.menu__bar--show [class|="material"] {
+    transform: translateX(256px);
+}
+
+[class|="material"] {
+    color: #fff;
+    width: 30px;
+    text-align: center;
+}
+
+.menu__bar__li {
+    line-height: 3;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+
+.menu__bar__li:hover {
+    background: var(--color-icon--list);
+}
+
+.menu__bar__a {
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.conteiner__toggle {
+    position: absolute;
+    left: 318px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    display: block;
+    z-index: 100;
+    color: var(--color-element);
+}
+
+.conteiner__icon-profile {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.fa-user {
+    font-size: 6.5rem;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 50%;
+    margin-top: 5px;
+    color: var(--color-icon--list);
+}
+
+.main,
+.section__card__commit {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    background: #F7F7F5;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 0.9em;
+}
+
+
+.section__card__commit {
+    gap: 1em;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.card__commit {
+    background: rgba(255, 255, 255, 65%);
+    box-shadow: 5px 5px 20px #5555;
+    position: relative;
+}
+
+.container__icon__setting {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 40px;
+    right: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.item__setting {
+    width: 15px;
+    height: 15px;
+    background: var(--color-element);
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.container__items__setting{
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    background: #fff;
+    box-shadow: 5px 5px 20px #5555;
+    display: none;
+}
+
+.container__items__setting--show{
+    display: block;
+}
+
+.items__setting{
+    padding-left: 0;
+    width: 100%;
+}
+
+.items__setting__list{
+    list-style: none;
+    line-height: 3.5;
+    padding-left: 30px;
+    padding-right: 5px;
+   
+}
+
+.items__setting__list:hover{
+    cursor: pointer;
+    background: #c6cac4;
+}
+
+.container__avatar {
+    text-align: center;
+}
+
+.container__commit__container__messages {
+    height: calc(--heigth-element);
+    position: relative;
+    padding: 10px;
+}
+
+.container__messages__container__images,
+.container__commit--input,
+.container__commit--input__submit {
+    display: inline-block;
+}
+
+.container__commit{
+padding: 0 10px;
+}
+
+.container__messages__container__images {
+   
+    width: 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.fa-thumbs-up,
+.fa-thumbs-down {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    color: #888;
+
+}
+
+.fa-thumbs-up:hover,
+.fa-thumbs-down:hover {
+    cursor: pointer;
+}
+
+.fa-picture-o{
+    font-size: 2.8rem;
+    color: #6BB85F;
+    cursor: pointer;
+}
+
+.container__commit--input {
+    vertical-align: text-bottom;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 0.5em;
+    width: calc(100% - 110px);
+}
+
+.server__card {
+    background: rgba(255, 255, 255, 65%);
+    padding:  10px;
+    box-shadow: 5px 5px 20px #5555;
+    text-align: center;
+}
+
+.card__text {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 550;
+    color: var(--color-element);
+}
+
+.server__card__container__images {
+    /*padding: 5px;*/
+    position: relative;
+}
+
+.server__card__container__images:hover::after{
+    box-sizing: border-box;
+    content: "ver servicio";
+    border: none;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    background: #333;
+    opacity: 0.89;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    line-height: 10;
+    font-weight: 660;
+    color: #fff;
+    cursor: pointer;
+}
+
+.fa-send {
+    font-size: 1.9rem;
+    color: var(--color-icon--list);
+    cursor: pointer;
+}
+
+.container__commit--input__submit {
+    position: absolute;
+    right: 5px;
+    padding-top: 5px;
+    width: 55px;
+    outline: none;
+    text-align: left;
+    background: transparent;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    .nav__bar {
+        transform: translateX(-266px);
+        padding: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .material__move__slider{
+        transform: translateX(225px);
+    }
+
+    .icon__server__card {
+        transform: translateX(0);
+    }
+
+    .conteiner__toggle {
+        display: none;
+    }
+
+    .main {
+        margin-left: 40px;
+    }
+
+    .section__card__commit {
+        gap: 0.5em;
+        flex: 50%;
+    }
+
+    .server__card {
+        flex: 30%;
+    }
+
+    .card__commit {
+        gap: 0.7em;
+        display: flex;
+        height: 300px;
+        width: 100%;
+    }
+
+    .container__commit--text {
+        padding-top: 30px;
+        height: 180px;
+        margin-bottom: 0;
+        overflow: auto;
+    }
+
+    .container__avatar__container__images {
+        width: 240px
+    }
+
+    .container__commit__container__messages {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .nav__bar {
+        padding-top: 0.1rem;
+        transform: translateX(0);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .conteiner__icon-profile {
+        display: block;
+    }
+
+    [class|="material"] {
+        transform: translateX(0);
+    }
+
+
+    .main {
+        margin-left: 310px;
+    }
+}
